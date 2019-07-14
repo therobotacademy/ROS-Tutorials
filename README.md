@@ -2,9 +2,9 @@
 # ROS-Tutorials
 ROS Tutorial Jupyter Notebooks
 
-Find updated Binder instance in my 
+Find updated Binder instance in HERE --> [Click me ![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/therobotacademy/ROS-Tutorials/master)
 
-This is the Binder instance of the original repo  --> [Click me ![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/RobInLabUJI/ROS-Tutorials/master?urlpath=lab)
+This is the Binder instance of the original repo ____  [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/RobInLabUJI/ROS-Tutorials/master?urlpath=lab)
 
 corresponding to repository 
 
