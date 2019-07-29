@@ -10,39 +10,37 @@ RUN apt-get update && apt-get install -y \
 	netpbm=2:10.0-15.3\
     && rm -rf /var/lib/apt/lists/
 
-# npm is needed by Jupyter ROS
-RUN apt-get update && apt-get install -y npm wget
-RUN npm install -g n
-RUN n stable
-
 RUN pip install --upgrade pip==18.0
-
-# RUN pip install \
+#RUN pip install \
 #  notebook==5.6.0 \
 #  ipywidgets==7.3.0 \
 #  ipykernel==4.8.2 \
 #  matplotlib==2.2.2 \
 #  jupyterlab==0.33.4
 
-RUN pip install notebook ipywidgets ipykernel matplotlib jupyterlab
-# Enable extensions in Jupyter Notebooks
-RUN jupyter nbextension enable --py widgetsnbextension
+# Install Jupyter
+RUN pip install \
+        six==1.11.0 \
+        numpy==1.12.0
+RUN pip install jupyter bqplot pyyaml ipywidgets
 
-# Install Jupyter-ROS dependecies
-RUN pip install bqplot pyyaml
+# Enable extensions in Jupyter Notebooks
+# RUN jupyter nbextension enable --py --sys-prefix ipywidgets
+RUN jupyter nbextension enable --py widgetsnbextension
 
 # Install Jupyter-ROS extension
 # https://github.com/RoboStack/jupyter-ros
-
-# Install the extension for jupyter
+RUN apt-get update && apt-get install -y npm wget
+RUN npm install -g n
+RUN n stable
 RUN pip install jupyros
+RUN jupyter nbextension enable --py --sys-prefix jupyros
+
+# If you prefer to use the newer jupyterlab
+#RUN pip install jupyterlab
+# Install the extension for jupyterlab
+#RUN jupyter labextension install jupyter-ros
 #RUN jupyter nbextension enable --py labextension
-
-# To install the extension for jupyterlab, you also need to execute the following:
-RUN jupyter labextension install jupyter-ros
-
-# Build jupyterlab
-RUN jupyter lab build
 
 ENV NB_USER gopigo
 ENV NB_UID 1000
@@ -55,9 +53,10 @@ RUN adduser --disabled-password \
 
 # Make sure the contents of our repo are in ${HOME}
 COPY . ${HOME}
+USER root
 RUN chown -R ${NB_UID} ${HOME}
 
 USER ${NB_USER}
 WORKDIR ${HOME}
 
-CMD ["jupyter", "lab", "--no-browser", "--ip", "0.0.0.0","--allow-root"]
+CMD ["jupyter", "lab", "--no-browser", "--ip", "0.0.0.0"]
