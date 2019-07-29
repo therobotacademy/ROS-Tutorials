@@ -1,5 +1,7 @@
 # Jupyter contrib. extensions
-To install the https://github.com/RoboStack/jupyter-ros`jupyter_contrib_nbextensions` package with this command on the terminal window:
+## Medium tutorial [3 Great Additions for your Jupyter Notebooks](https://towardsdatascience.com/three-great-additions-for-your-jupyter-notebooks-cd7373b00e96)
+
+To install the `jupyter_contrib_nbextensions` package with this command on the terminal window:
 ```
 $ conda install -c conda-forge jupyter_contrib_nbextensions
 ```
