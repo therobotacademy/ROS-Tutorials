@@ -15,10 +15,10 @@ Once you go to the home page of your jupyter notebook, you can see that a new ta
 ## ROS Tutorial Jupyter Notebooks
 
 Find updated Binder instance in HERE --> [Click me ![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/therobotacademy/ROS-Tutorials/master)
+- corresponding to repository [Source repo](https://github.com/therobotacademy/ROS-Tutorials)
 
-This is the Binder instance of the original repo ____  [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/RobInLabUJI/ROS-Tutorials/master?urlpath=lab)
-
-corresponding to repository [Source repo](https://github.com/RobInLabUJI/ROS-Tutorials)
+This is the Binder instance of the ORIGINAL repo ____  [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/RobInLabUJI/ROS-Tutorials/master?urlpath=lab)
+- corresponding to repository [Source repo](https://github.com/RobInLabUJI/ROS-Tutorials)
 
 Find the paper describing this methodology for teaching ROS at file `Interactive ROS Tutorials with Jupyter Notebooks.pdf`
 or at [CEUR Workshop Proceedings (CEUR-WS.org)](http://ceur-ws.org/Vol-2329/paper-01.pdf)
